@@ -128,35 +128,65 @@ class: text-center
 
 # The Future is Here
 
-<div class="grid grid-cols-2 gap-12 mt-12">
+<div class="grid grid-cols-2 gap-10 pt-4 -mb-6">
 
 <div>
 
-### 🚀 **Breakthrough Applications**
-
-- **Computer Vision** - Image recognition, medical diagnosis
-- **Natural Language** - ChatGPT, language translation  
-- **Autonomous Systems** - Self-driving cars, robotics
-- **Scientific Discovery** - Drug discovery, climate modeling
+```mermaid {scale: 0.8}
+graph TD
+    A[Raw Data] --> B[Data Preprocessing]
+    B --> C[Neural Network]
+    C --> D{Training Complete?}
+    D -->|No| E[Backpropagation]
+    E --> F[Update Weights]
+    F --> C
+    D -->|Yes| G[Model Evaluation]
+    G --> H[Deploy Model]
+    
+    style A fill:#e1f5fe
+    style C fill:#f3e5f5
+    style G fill:#e8f5e8
+    style H fill:#fff3e0
+```
 
 </div>
 
 <div>
 
-### 🔬 **Emerging Frontiers**
-
-- **Transformer Models** - Attention mechanisms revolutionizing AI
-- **Generative AI** - Creating art, code, and content
-- **Federated Learning** - Privacy-preserving distributed training
-- **Quantum ML** - Next-generation computing paradigms
+```mermaid {theme: 'neutral', scale: 0.7}
+graph LR
+    subgraph "Deep Learning Applications"
+        CV[Computer Vision]
+        NLP[Natural Language]
+        RL[Reinforcement Learning]
+        GAN[Generative Models]
+    end
+    
+    CV --> IMG[Image Recognition]
+    CV --> MED[Medical Diagnosis]
+    
+    NLP --> CHAT[ChatGPT]
+    NLP --> TRANS[Translation]
+    
+    RL --> AUTO[Autonomous Cars]
+    RL --> GAME[Game AI]
+    
+    GAN --> ART[AI Art]
+    GAN --> SYNTH[Data Synthesis]
+    
+    style CV fill:#ffebee
+    style NLP fill:#e8f5e8
+    style RL fill:#e3f2fd
+    style GAN fill:#fff8e1
+```
 
 </div>
 
 </div>
 
-<div class="mt-16">
+<div class="mt-8 text-center">
 
-### Ready to build the future with AI?
+**Ready to build the future with AI?**
 
 [TensorFlow](https://tensorflow.org) · [PyTorch](https://pytorch.org) · [Hugging Face](https://huggingface.co) · [Papers With Code](https://paperswithcode.com)
 
