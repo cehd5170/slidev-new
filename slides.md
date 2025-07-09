@@ -128,66 +128,230 @@ class: text-center
 
 # The Future is Here
 
-<div class="grid grid-cols-2 gap-10 pt-4 -mb-6">
+<div class="grid grid-cols-2 gap-8 pt-4">
 
 <div>
 
-```mermaid {scale: 0.8}
-graph TD
-    A[Raw Data] --> B[Data Preprocessing]
-    B --> C[Neural Network]
-    C --> D{Training Complete?}
-    D -->|No| E[Backpropagation]
-    E --> F[Update Weights]
-    F --> C
-    D -->|Yes| G[Model Evaluation]
-    G --> H[Deploy Model]
-    
-    style A fill:#e1f5fe
-    style C fill:#f3e5f5
-    style G fill:#e8f5e8
-    style H fill:#fff3e0
-```
+## Deep Learning Process
+
+<div class="flowchart">
+  <div class="flow-step start">
+    <div class="box">Raw Data</div>
+    <div class="arrow">↓</div>
+  </div>
+  
+  <div class="flow-step">
+    <div class="box">Data Preprocessing</div>
+    <div class="arrow">↓</div>
+  </div>
+  
+  <div class="flow-step">
+    <div class="box neural">Neural Network Training</div>
+    <div class="arrow">↓</div>
+  </div>
+  
+  <div class="flow-step">
+    <div class="diamond">Training Complete?</div>
+    <div class="decision-arrows">
+      <div class="arrow-left">← No</div>
+      <div class="arrow-down">↓ Yes</div>
+    </div>
+  </div>
+  
+  <div class="flow-step">
+    <div class="box success">Model Deployment</div>
+  </div>
+</div>
 
 </div>
 
 <div>
 
-```mermaid {theme: 'neutral', scale: 0.7}
-graph LR
-    subgraph "Deep Learning Applications"
-        CV[Computer Vision]
-        NLP[Natural Language]
-        RL[Reinforcement Learning]
-        GAN[Generative Models]
-    end
-    
-    CV --> IMG[Image Recognition]
-    CV --> MED[Medical Diagnosis]
-    
-    NLP --> CHAT[ChatGPT]
-    NLP --> TRANS[Translation]
-    
-    RL --> AUTO[Autonomous Cars]
-    RL --> GAME[Game AI]
-    
-    GAN --> ART[AI Art]
-    GAN --> SYNTH[Data Synthesis]
-    
-    style CV fill:#ffebee
-    style NLP fill:#e8f5e8
-    style RL fill:#e3f2fd
-    style GAN fill:#fff8e1
-```
+## Applications
 
+<div class="applications-grid">
+  <div class="app-category vision">
+    <h4>Computer Vision</h4>
+    <ul>
+      <li>Image Recognition</li>
+      <li>Medical Diagnosis</li>
+      <li>Autonomous Vehicles</li>
+    </ul>
+  </div>
+  
+  <div class="app-category nlp">
+    <h4>Natural Language</h4>
+    <ul>
+      <li>ChatGPT & LLMs</li>
+      <li>Language Translation</li>
+      <li>Text Summarization</li>
+    </ul>
+  </div>
+  
+  <div class="app-category rl">
+    <h4>Reinforcement Learning</h4>
+    <ul>
+      <li>Game AI (AlphaGo)</li>
+      <li>Robotics Control</li>
+      <li>Trading Systems</li>
+    </ul>
+  </div>
+  
+  <div class="app-category gen">
+    <h4>Generative AI</h4>
+    <ul>
+      <li>AI Art & Images</li>
+      <li>Music Generation</li>
+      <li>Code Generation</li>
+    </ul>
+  </div>
 </div>
 
 </div>
 
-<div class="mt-8 text-center">
+</div>
+
+<div class="mt-6 text-center">
 
 **Ready to build the future with AI?**
 
 [TensorFlow](https://tensorflow.org) · [PyTorch](https://pytorch.org) · [Hugging Face](https://huggingface.co) · [Papers With Code](https://paperswithcode.com)
 
 </div>
+
+<style>
+.flowchart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  min-width: 140px;
+  text-align: center;
+}
+
+.box.neural {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.box.success {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.diamond {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  color: #333;
+  padding: 12px 16px;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  min-width: 120px;
+  text-align: center;
+  transform: rotate(45deg);
+}
+
+.diamond span {
+  transform: rotate(-45deg);
+  display: block;
+}
+
+.arrow {
+  font-size: 24px;
+  color: #667eea;
+  margin: 4px 0;
+  font-weight: bold;
+}
+
+.decision-arrows {
+  display: flex;
+  gap: 40px;
+  margin-top: 8px;
+}
+
+.arrow-left, .arrow-down {
+  font-size: 14px;
+  color: #667eea;
+  font-weight: 600;
+}
+
+.applications-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.app-category {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-left: 4px solid;
+}
+
+.app-category.vision {
+  border-left-color: #ff6b6b;
+  background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+}
+
+.app-category.nlp {
+  border-left-color: #4ecdc4;
+  background: linear-gradient(135deg, #f0fdfc 0%, #e6fffa 100%);
+}
+
+.app-category.rl {
+  border-left-color: #45b7d1;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+
+.app-category.gen {
+  border-left-color: #f9ca24;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+}
+
+.app-category h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+}
+
+.app-category ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.app-category li {
+  padding: 4px 0;
+  font-size: 13px;
+  color: #555;
+  position: relative;
+  padding-left: 16px;
+}
+
+.app-category li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+</style>
