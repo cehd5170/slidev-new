@@ -1,33 +1,36 @@
 ---
-# try also 'default' to start simple
-theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-background: https://source.unsplash.com/collection/94734566/1920x1080
-# apply any windi css classes to the current slide
+# Available themes: default, seriph, apple, bricks, dracula, geist, light, minimal, nord, purplin, shibainu, unicorn
+theme: apple
+# Custom background for a tech/AI feel
+background: https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80
+# Apply classes to current slide
 class: 'text-center'
-# https://sli.dev/custom/highlighters.html
+# Syntax highlighter
 highlighter: shiki
-# show line numbers in code blocks
-lineNumbers: false
-# some information about the slides, markdown enabled
+# Show line numbers in code blocks
+lineNumbers: true
+# Slide information
 info: |
   ## Deep Learning Overview
   A comprehensive introduction to deep learning concepts and applications.
-
-  Learn more at [Sli.dev](https://sli.dev)
-# persist drawings in exports and build
+  
+  Modern AI presentation template.
+# Persist drawings
 drawings:
   persist: false
+# Custom fonts
+fonts:
+  sans: 'Inter'
+  serif: 'Inter'
+  mono: 'Fira Code'
 ---
 
-# Welcome to Deep Learning
-
-Understanding Neural Networks and Modern AI
+# Deep Learning Revolution
+## Transforming AI with Neural Networks
 
 <div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
+  <span @click="$slidev.nav.next" class="px-4 py-2 rounded-lg cursor-pointer bg-blue-500 bg-opacity-20 hover:bg-opacity-30 transition-all duration-300">
+    Start Journey <carbon:arrow-right class="inline ml-2"/>
   </span>
 </div>
 
@@ -41,83 +44,111 @@ Understanding Neural Networks and Modern AI
   </a>
 </div>
 
-<!--
-Deep learning is revolutionizing how machines understand and process information, from computer vision to natural language processing.
--->
-
----
-
-# What is Deep Learning?
-
-Deep learning is a powerful subset of machine learning inspired by the human brain, consisting of the following key aspects
-
-- 🧠 **Neural Networks** - multi-layered artificial neurons that process information
-- 📊 **Pattern Recognition** - automatically discovers complex patterns in data
-- 🔄 **Backpropagation** - learning algorithm that optimizes network weights
-- 🎯 **Feature Learning** - extracts meaningful representations without manual engineering
-- ⚡ **Scalability** - leverages GPU computing for massive parallel processing
-- 🌐 **Versatility** - applicable across vision, language, speech, and decision-making
-
-<br>
-<br>
-
-Read more about [Why Deep Learning?](https://www.deeplearningbook.org/)
-
-<!--
-Deep learning has transformed AI by enabling machines to learn hierarchical representations of data, leading to breakthroughs in computer vision, natural language processing, and many other domains.
--->
-
 <style>
 h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  -moz-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-size: 3.5rem !important;
+  font-weight: 800;
+}
+
+h2 {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-top: 1rem;
 }
 </style>
 
 ---
-layout: image-right
-image: https://source.unsplash.com/1920x1080/?artificial-intelligence,neural-network
+layout: intro
+class: text-left
 ---
 
-# Neural Architecture
+# What is Deep Learning?
 
-Build powerful models with layered networks![^1]
+<div class="grid grid-cols-2 gap-12 mt-8">
 
-```python {all|2|1-6|9|all}
-import tensorflow as tf
+<div>
 
-# Define neural network layers
-model = tf.keras.Sequential([
-    tf.keras.layers.Dense(128, activation='relu'),
-    tf.keras.layers.Dropout(0.2),
-    tf.keras.layers.Dense(64, activation='relu'),
-    tf.keras.layers.Dense(10, activation='softmax')
-])
+## Core Concepts
 
-# Compile and train
-model.compile(optimizer='adam',
-              loss='categorical_crossentropy',
-              metrics=['accuracy'])
-```
+<v-clicks>
 
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
+- 🧠 **Neural Networks**  
+  Multi-layered artificial neurons
 
-[^1]: [Learn More](https://www.tensorflow.org/guide/keras)
+- 📊 **Pattern Recognition**  
+  Automatic complex pattern discovery
+
+- 🔄 **Backpropagation**  
+  Weight optimization algorithm
+
+- 🎯 **Feature Learning**  
+  Automatic representation extraction
+
+- ⚡ **GPU Acceleration**  
+  Massive parallel processing
+
+- 🌐 **Universal Approximation**  
+  Can model any continuous function
+
+</v-clicks>
+
+</div>
+
+<div>
+
+## Key Advantages
+
+<v-clicks>
+
+- **Automatic Feature Engineering**  
+  No manual feature extraction needed
+
+- **Scalable Performance**  
+  Improves with more data
+
+- **Transfer Learning**  
+  Reuse pre-trained models
+
+- **End-to-End Learning**  
+  Direct input-to-output mapping
+
+- **State-of-the-Art Results**  
+  Leading performance across domains
+
+</v-clicks>
+
+</div>
+
+</div>
 
 <style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
+h1 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.5rem;
+  font-weight: 700;
 }
-.footnotes {
-  @apply text-sm opacity-75;
+
+h2 {
+  color: #4a5568;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
 }
-.footnote-backref {
-  display: none;
+
+li {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+strong {
+  color: #2d3748;
+  font-weight: 600;
 }
 </style>
 
@@ -126,83 +157,122 @@ layout: center
 class: text-center
 ---
 
-# The Future is Here
+# Deep Learning Ecosystem
 
-<div class="grid grid-cols-2 gap-8 pt-4">
+<div class="grid grid-cols-2 gap-16 mt-12">
 
 <div>
 
-## Deep Learning Process
+## 🔄 Development Process
 
-<div class="flowchart">
-  <div class="flow-step start">
-    <div class="box">Raw Data</div>
-    <div class="arrow">↓</div>
-  </div>
-  
-  <div class="flow-step">
-    <div class="box">Data Preprocessing</div>
-    <div class="arrow">↓</div>
-  </div>
-  
-  <div class="flow-step">
-    <div class="box neural">Neural Network Training</div>
-    <div class="arrow">↓</div>
-  </div>
-  
-  <div class="flow-step">
-    <div class="diamond">Training Complete?</div>
-    <div class="decision-arrows">
-      <div class="arrow-left">← No</div>
-      <div class="arrow-down">↓ Yes</div>
+<div class="process-flow">
+  <div class="step-container">
+    <div class="step start">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h4>Data Collection</h4>
+        <p>Gather & preprocess datasets</p>
+      </div>
+    </div>
+    
+    <div class="flow-arrow">↓</div>
+    
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h4>Model Design</h4>
+        <p>Architecture selection</p>
+      </div>
+    </div>
+    
+    <div class="flow-arrow">↓</div>
+    
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h4>Training</h4>
+        <p>Optimize parameters</p>
+      </div>
+    </div>
+    
+    <div class="flow-arrow">↓</div>
+    
+    <div class="step">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <h4>Evaluation</h4>
+        <p>Test performance</p>
+      </div>
+    </div>
+    
+    <div class="decision-point">
+      <div class="diamond">
+        <span>Good Results?</span>
+      </div>
+      <div class="decision-arrows">
+        <div class="arrow-no">← No (Iterate)</div>
+        <div class="arrow-yes">↓ Yes</div>
+      </div>
+    </div>
+    
+    <div class="step final">
+      <div class="step-number">5</div>
+      <div class="step-content">
+        <h4>Deployment</h4>
+        <p>Production ready</p>
+      </div>
     </div>
   </div>
-  
-  <div class="flow-step">
-    <div class="box success">Model Deployment</div>
-  </div>
 </div>
 
 </div>
 
 <div>
 
-## Applications
+## 🚀 Applications
 
-<div class="applications-grid">
-  <div class="app-category vision">
+<div class="applications">
+  <div class="app-card vision">
+    <div class="app-icon">👁️</div>
     <h4>Computer Vision</h4>
     <ul>
-      <li>Image Recognition</li>
-      <li>Medical Diagnosis</li>
-      <li>Autonomous Vehicles</li>
+      <li>Image Classification</li>
+      <li>Object Detection</li>
+      <li>Medical Imaging</li>
+      <li>Autonomous Driving</li>
     </ul>
   </div>
   
-  <div class="app-category nlp">
+  <div class="app-card nlp">
+    <div class="app-icon">💬</div>
     <h4>Natural Language</h4>
     <ul>
       <li>ChatGPT & LLMs</li>
-      <li>Language Translation</li>
-      <li>Text Summarization</li>
+      <li>Machine Translation</li>
+      <li>Sentiment Analysis</li>
+      <li>Text Generation</li>
     </ul>
   </div>
   
-  <div class="app-category rl">
+  <div class="app-card audio">
+    <div class="app-icon">🎵</div>
+    <h4>Audio Processing</h4>
+    <ul>
+      <li>Speech Recognition</li>
+      <li>Music Generation</li>
+      <li>Voice Synthesis</li>
+      <li>Audio Classification</li>
+    </ul>
+  </div>
+  
+  <div class="app-card rl">
+    <div class="app-icon">🎮</div>
     <h4>Reinforcement Learning</h4>
     <ul>
       <li>Game AI (AlphaGo)</li>
       <li>Robotics Control</li>
       <li>Trading Systems</li>
-    </ul>
-  </div>
-  
-  <div class="app-category gen">
-    <h4>Generative AI</h4>
-    <ul>
-      <li>AI Art & Images</li>
-      <li>Music Generation</li>
-      <li>Code Generation</li>
+      <li>Resource Optimization</li>
     </ul>
   </div>
 </div>
@@ -211,147 +281,227 @@ class: text-center
 
 </div>
 
-<div class="mt-6 text-center">
-
-**Ready to build the future with AI?**
-
-[TensorFlow](https://tensorflow.org) · [PyTorch](https://pytorch.org) · [Hugging Face](https://huggingface.co) · [Papers With Code](https://paperswithcode.com)
-
+<div class="mt-12">
+  <h3 class="text-2xl font-bold mb-4">Popular Frameworks</h3>
+  <div class="frameworks">
+    <a href="https://tensorflow.org" class="framework-link">TensorFlow</a>
+    <a href="https://pytorch.org" class="framework-link">PyTorch</a>
+    <a href="https://keras.io" class="framework-link">Keras</a>
+    <a href="https://huggingface.co" class="framework-link">Hugging Face</a>
+  </div>
 </div>
 
 <style>
-.flowchart {
+.process-flow {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.step-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: white;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  transition: transform 0.2s ease;
+}
+
+.step:hover {
+  transform: translateY(-2px);
+}
+
+.step.start {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.step.final {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+}
+
+.step-number {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.step:not(.start):not(.final) .step-number {
+  background: #667eea;
+  color: white;
+}
+
+.step-content h4 {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.step-content p {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.flow-arrow {
+  font-size: 24px;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.decision-point {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  margin: 20px 0;
-}
-
-.flow-step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.box {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 14px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  min-width: 140px;
-  text-align: center;
-}
-
-.box.neural {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-}
-
-.box.success {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
 }
 
 .diamond {
   background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
   color: #333;
-  padding: 12px 16px;
-  border-radius: 50%;
+  padding: 16px;
+  border-radius: 8px;
   font-weight: 600;
   font-size: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  min-width: 120px;
   text-align: center;
   transform: rotate(45deg);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .diamond span {
   transform: rotate(-45deg);
-  display: block;
-}
-
-.arrow {
-  font-size: 24px;
-  color: #667eea;
-  margin: 4px 0;
-  font-weight: bold;
+  line-height: 1.2;
 }
 
 .decision-arrows {
   display: flex;
   gap: 40px;
-  margin-top: 8px;
-}
-
-.arrow-left, .arrow-down {
-  font-size: 14px;
-  color: #667eea;
+  font-size: 12px;
   font-weight: 600;
+  color: #667eea;
 }
 
-.applications-grid {
+.applications {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  margin: 20px 0;
+  max-width: 500px;
 }
 
-.app-category {
+.app-card {
   background: white;
   border-radius: 12px;
-  padding: 16px;
+  padding: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  border-left: 4px solid;
+  transition: transform 0.2s ease;
 }
 
-.app-category.vision {
-  border-left-color: #ff6b6b;
-  background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+.app-card:hover {
+  transform: translateY(-4px);
 }
 
-.app-category.nlp {
-  border-left-color: #4ecdc4;
-  background: linear-gradient(135deg, #f0fdfc 0%, #e6fffa 100%);
+.app-card.vision {
+  border-left: 4px solid #ff6b6b;
 }
 
-.app-category.rl {
-  border-left-color: #45b7d1;
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+.app-card.nlp {
+  border-left: 4px solid #4ecdc4;
 }
 
-.app-category.gen {
-  border-left-color: #f9ca24;
-  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+.app-card.audio {
+  border-left: 4px solid #45b7d1;
 }
 
-.app-category h4 {
+.app-card.rl {
+  border-left: 4px solid #f9ca24;
+}
+
+.app-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.app-card h4 {
   margin: 0 0 12px 0;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   color: #333;
 }
 
-.app-category ul {
+.app-card ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.app-category li {
-  padding: 4px 0;
-  font-size: 13px;
+.app-card li {
+  padding: 2px 0;
+  font-size: 11px;
   color: #555;
   position: relative;
-  padding-left: 16px;
+  padding-left: 12px;
 }
 
-.app-category li:before {
+.app-card li:before {
   content: "•";
   position: absolute;
   left: 0;
   color: #667eea;
   font-weight: bold;
+}
+
+.frameworks {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.framework-link {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.framework-link:hover {
+  transform: translateY(-2px);
+}
+
+h1 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+h3 {
+  color: #4a5568;
 }
 </style>
