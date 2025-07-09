@@ -1,6 +1,6 @@
 ---
 # Available themes: default, seriph, apple, bricks, dracula, geist, light, minimal, nord, purplin, shibainu, unicorn
-theme: apple
+theme: bricks
 # Custom background for a tech/AI feel
 background: https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80
 # Apply classes to current slide
