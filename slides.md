@@ -9,11 +9,11 @@ class: 'text-center'
 # https://sli.dev/custom/highlighters.html
 highlighter: shiki
 # show line numbers in code blocks
-lineNumbers: false
+lineNumbers: true
 # some information about the slides, markdown enabled
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
+  ## Deep Learning Overview
+  A comprehensive introduction to deep learning concepts and applications.
 
   Learn more at [Sli.dev](https://sli.dev)
 # persist drawings in exports and build
@@ -21,9 +21,9 @@ drawings:
   persist: false
 ---
 
-# Welcome to Slidev
+# Deep Learning Overview
 
-Presentation slides for developers
+Understanding Neural Networks and AI
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -42,32 +42,42 @@ Presentation slides for developers
 </div>
 
 <!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
+Deep learning is a subset of machine learning that uses artificial neural networks with multiple layers to model and understand complex patterns in data.
 -->
 
 ---
 
-# What is Slidev?
+# What is Deep Learning?
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+Deep learning is a powerful subset of machine learning that mimics the human brain's neural networks
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
+<div class="grid grid-cols-2 gap-8 mt-8">
 
-<br>
-<br>
+<div>
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
+## Key Concepts
 
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
+- 🧠 **Neural Networks** - Interconnected layers of artificial neurons
+- 📊 **Big Data** - Requires large datasets for training
+- 🔄 **Backpropagation** - Learning algorithm that adjusts weights
+- 🎯 **Feature Learning** - Automatically discovers patterns in data
+- ⚡ **GPU Computing** - Parallel processing for faster training
+
+</div>
+
+<div>
+
+## Common Applications
+
+- 🖼️ **Computer Vision** - Image recognition, object detection
+- 🗣️ **Natural Language Processing** - Text analysis, translation
+- 🎵 **Speech Recognition** - Voice assistants, transcription
+- 🎮 **Game AI** - Strategic decision making
+- 🚗 **Autonomous Systems** - Self-driving cars, robotics
+
+</div>
+
+</div>
 
 <style>
 h1 {
@@ -83,266 +93,106 @@ h1 {
 
 ---
 
-# Navigation
+# Neural Network Architecture
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
+Understanding the building blocks of deep learning models
 
-### Keyboard Shortcuts
+<div class="grid grid-cols-2 gap-6 mt-6">
 
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
-
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
----
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
----
-
-# Code
-
-Use code snippets and get the highlighting directly![^1]
-
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = {...user, ...update}  
-  saveUser(id, newUser)
-}
-```
-
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
-
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
-
-<style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
----
-
-# Components
-
-<div grid="~ cols-2 gap-4">
 <div>
 
-You can use Vue components directly inside your slides.
+## Basic Structure
 
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
+```python
+import tensorflow as tf
 
-```html
-<Counter :count="10" />
+# Simple neural network
+model = tf.keras.Sequential([
+    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dropout(0.2),
+    tf.keras.layers.Dense(64, activation='relu'),
+    tf.keras.layers.Dense(10, activation='softmax')
+])
+
+# Compile the model
+model.compile(
+    optimizer='adam',
+    loss='categorical_crossentropy',
+    metrics=['accuracy']
+)
 ```
 
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
 </div>
+
 <div>
 
-```html
-<Tweet id="1390115482657726468" />
-```
+## Layer Types
 
-<Tweet id="1390115482657726468" scale="0.65" />
+- **Dense/Fully Connected** - Every neuron connects to all neurons in next layer
+- **Convolutional** - Specialized for image processing with filters
+- **Recurrent (RNN/LSTM)** - Handles sequential data with memory
+- **Dropout** - Prevents overfitting by randomly disabling neurons
+- **Batch Normalization** - Stabilizes and speeds up training
 
-</div>
-</div>
+## Training Process
 
-
----
-class: px-20
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="-t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
+1. **Forward Pass** - Data flows through network
+2. **Loss Calculation** - Compare output to expected result
+3. **Backward Pass** - Calculate gradients using backpropagation
+4. **Weight Update** - Adjust parameters to minimize loss
 
 </div>
 
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
-
----
-preload: false
----
-
-# Animations
-
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
 </div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-    />
-  </div>
-
-  <div 
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
-
-</div>
-
----
-
-# LaTeX
-
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
-
-<br>
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$
-\begin{array}{c}
-
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
-<br>
-
-[Learn more](https://sli.dev/guide/syntax#latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-2 gap-10 pt-4 -mb-6">
-
-```mermaid {scale: 0.9}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-</div>
-
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
-
 
 ---
 layout: center
 class: text-center
 ---
 
-# Learn More
+# The Future of Deep Learning
 
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+<div class="grid grid-cols-3 gap-8 mt-12">
+
+<div class="text-center">
+
+## 🚀 **Emerging Trends**
+
+- Transformer architectures
+- Self-supervised learning
+- Few-shot learning
+- Neural architecture search
+
+</div>
+
+<div class="text-center">
+
+## 🔬 **Research Areas**
+
+- Explainable AI
+- Federated learning
+- Quantum machine learning
+- Neuromorphic computing
+
+</div>
+
+<div class="text-center">
+
+## 🌍 **Real-world Impact**
+
+- Healthcare diagnostics
+- Climate modeling
+- Drug discovery
+- Scientific research
+
+</div>
+
+</div>
+
+<div class="mt-16">
+
+### Ready to dive deeper into AI and machine learning?
+
+[TensorFlow](https://tensorflow.org) · [PyTorch](https://pytorch.org) · [Keras](https://keras.io) · [Papers With Code](https://paperswithcode.com)
+
+</div>
