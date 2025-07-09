@@ -293,7 +293,7 @@ class: text-center
 
 <style>
 .process-flow {
-  max-width: 300px;
+  max-width: 280px;
   margin: 0 auto;
 }
 
@@ -301,19 +301,21 @@ class: text-center
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
 }
 
 .step {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   background: white;
-  padding: 16px 20px;
-  border-radius: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   width: 100%;
+  max-width: 260px;
   transition: transform 0.2s ease;
+  box-sizing: border-box;
 }
 
 .step:hover {
@@ -333,8 +335,8 @@ class: text-center
 .step-number {
   background: rgba(255,255,255,0.2);
   color: white;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -350,14 +352,16 @@ class: text-center
 
 .step-content h4 {
   margin: 0 0 4px 0;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
+  line-height: 1.2;
 }
 
 .step-content p {
   margin: 0;
-  font-size: 12px;
+  font-size: 11px;
   opacity: 0.8;
+  line-height: 1.3;
 }
 
 .flow-arrow {
@@ -371,27 +375,30 @@ class: text-center
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  margin: 4px 0;
 }
 
 .diamond {
   background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
   color: #333;
-  padding: 16px;
+  padding: 12px;
   border-radius: 8px;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 10px;
   text-align: center;
   transform: rotate(45deg);
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .diamond span {
   transform: rotate(-45deg);
   line-height: 1.2;
+  white-space: nowrap;
 }
 
 .decision-arrows {
@@ -405,7 +412,7 @@ class: text-center
 .applications {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 12px;
   max-width: 500px;
 }
 
@@ -415,6 +422,7 @@ class: text-center
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.2s ease;
+  min-height: 140px;
 }
 
 .app-card:hover {
