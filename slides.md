@@ -9,7 +9,7 @@ class: 'text-center'
 # https://sli.dev/custom/highlighters.html
 highlighter: shiki
 # show line numbers in code blocks
-lineNumbers: true
+lineNumbers: false
 # some information about the slides, markdown enabled
 info: |
   ## Deep Learning Overview
@@ -21,9 +21,9 @@ drawings:
   persist: false
 ---
 
-# Deep Learning Overview
+# Welcome to Deep Learning
 
-Understanding Neural Networks and AI
+Understanding Neural Networks and Modern AI
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -35,49 +35,37 @@ Understanding Neural Networks and AI
   <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
     <carbon:edit />
   </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
+  <a href="https://github.com/tensorflow/tensorflow" target="_blank" alt="TensorFlow"
     class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
     <carbon-logo-github />
   </a>
 </div>
 
 <!--
-Deep learning is a subset of machine learning that uses artificial neural networks with multiple layers to model and understand complex patterns in data.
+Deep learning is revolutionizing how machines understand and process information, from computer vision to natural language processing.
 -->
 
 ---
 
 # What is Deep Learning?
 
-Deep learning is a powerful subset of machine learning that mimics the human brain's neural networks
+Deep learning is a powerful subset of machine learning inspired by the human brain, consisting of the following key aspects
 
-<div class="grid grid-cols-2 gap-8 mt-8">
+- 🧠 **Neural Networks** - multi-layered artificial neurons that process information
+- 📊 **Pattern Recognition** - automatically discovers complex patterns in data
+- 🔄 **Backpropagation** - learning algorithm that optimizes network weights
+- 🎯 **Feature Learning** - extracts meaningful representations without manual engineering
+- ⚡ **Scalability** - leverages GPU computing for massive parallel processing
+- 🌐 **Versatility** - applicable across vision, language, speech, and decision-making
 
-<div>
+<br>
+<br>
 
-## Key Concepts
+Read more about [Why Deep Learning?](https://www.deeplearningbook.org/)
 
-- 🧠 **Neural Networks** - Interconnected layers of artificial neurons
-- 📊 **Big Data** - Requires large datasets for training
-- 🔄 **Backpropagation** - Learning algorithm that adjusts weights
-- 🎯 **Feature Learning** - Automatically discovers patterns in data
-- ⚡ **GPU Computing** - Parallel processing for faster training
-
-</div>
-
-<div>
-
-## Common Applications
-
-- 🖼️ **Computer Vision** - Image recognition, object detection
-- 🗣️ **Natural Language Processing** - Text analysis, translation
-- 🎵 **Speech Recognition** - Voice assistants, transcription
-- 🎮 **Game AI** - Strategic decision making
-- 🚗 **Autonomous Systems** - Self-driving cars, robotics
-
-</div>
-
-</div>
+<!--
+Deep learning has transformed AI by enabling machines to learn hierarchical representations of data, leading to breakthroughs in computer vision, natural language processing, and many other domains.
+-->
 
 <style>
 h1 {
@@ -92,21 +80,18 @@ h1 {
 </style>
 
 ---
+layout: image-right
+image: https://source.unsplash.com/1920x1080/?artificial-intelligence,neural-network
+---
 
-# Neural Network Architecture
+# Neural Architecture
 
-Understanding the building blocks of deep learning models
+Build powerful models with layered networks![^1]
 
-<div class="grid grid-cols-2 gap-6 mt-6">
-
-<div>
-
-## Basic Structure
-
-```python
+```python {all|2|1-6|9|all}
 import tensorflow as tf
 
-# Simple neural network
+# Define neural network layers
 model = tf.keras.Sequential([
     tf.keras.layers.Dense(128, activation='relu'),
     tf.keras.layers.Dropout(0.2),
@@ -114,76 +99,56 @@ model = tf.keras.Sequential([
     tf.keras.layers.Dense(10, activation='softmax')
 ])
 
-# Compile the model
-model.compile(
-    optimizer='adam',
-    loss='categorical_crossentropy',
-    metrics=['accuracy']
-)
+# Compile and train
+model.compile(optimizer='adam',
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
 ```
 
-</div>
+<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
 
-<div>
+[^1]: [Learn More](https://www.tensorflow.org/guide/keras)
 
-## Layer Types
-
-- **Dense/Fully Connected** - Every neuron connects to all neurons in next layer
-- **Convolutional** - Specialized for image processing with filters
-- **Recurrent (RNN/LSTM)** - Handles sequential data with memory
-- **Dropout** - Prevents overfitting by randomly disabling neurons
-- **Batch Normalization** - Stabilizes and speeds up training
-
-## Training Process
-
-1. **Forward Pass** - Data flows through network
-2. **Loss Calculation** - Compare output to expected result
-3. **Backward Pass** - Calculate gradients using backpropagation
-4. **Weight Update** - Adjust parameters to minimize loss
-
-</div>
-
-</div>
+<style>
+.footnotes-sep {
+  @apply mt-20 opacity-10;
+}
+.footnotes {
+  @apply text-sm opacity-75;
+}
+.footnote-backref {
+  display: none;
+}
+</style>
 
 ---
 layout: center
 class: text-center
 ---
 
-# The Future of Deep Learning
+# The Future is Here
 
-<div class="grid grid-cols-3 gap-8 mt-12">
+<div class="grid grid-cols-2 gap-12 mt-12">
 
-<div class="text-center">
+<div>
 
-## 🚀 **Emerging Trends**
+### 🚀 **Breakthrough Applications**
 
-- Transformer architectures
-- Self-supervised learning
-- Few-shot learning
-- Neural architecture search
-
-</div>
-
-<div class="text-center">
-
-## 🔬 **Research Areas**
-
-- Explainable AI
-- Federated learning
-- Quantum machine learning
-- Neuromorphic computing
+- **Computer Vision** - Image recognition, medical diagnosis
+- **Natural Language** - ChatGPT, language translation  
+- **Autonomous Systems** - Self-driving cars, robotics
+- **Scientific Discovery** - Drug discovery, climate modeling
 
 </div>
 
-<div class="text-center">
+<div>
 
-## 🌍 **Real-world Impact**
+### 🔬 **Emerging Frontiers**
 
-- Healthcare diagnostics
-- Climate modeling
-- Drug discovery
-- Scientific research
+- **Transformer Models** - Attention mechanisms revolutionizing AI
+- **Generative AI** - Creating art, code, and content
+- **Federated Learning** - Privacy-preserving distributed training
+- **Quantum ML** - Next-generation computing paradigms
 
 </div>
 
@@ -191,8 +156,8 @@ class: text-center
 
 <div class="mt-16">
 
-### Ready to dive deeper into AI and machine learning?
+### Ready to build the future with AI?
 
-[TensorFlow](https://tensorflow.org) · [PyTorch](https://pytorch.org) · [Keras](https://keras.io) · [Papers With Code](https://paperswithcode.com)
+[TensorFlow](https://tensorflow.org) · [PyTorch](https://pytorch.org) · [Hugging Face](https://huggingface.co) · [Papers With Code](https://paperswithcode.com)
 
 </div>
