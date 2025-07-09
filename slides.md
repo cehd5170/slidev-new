@@ -1,6 +1,6 @@
 ---
 # Available themes: default, seriph, apple, bricks, dracula, geist, light, minimal, nord, purplin, shibainu, unicorn
-theme: seriph
+theme: light
 # Apply classes to current slide
 class: 'text-center'
 # Syntax highlighter
